@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 import joblib
-
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 pest_type_model = joblib.load("models/pest_type_model.joblib")
 pest_risk_model = joblib.load("models/pest_risk_model.joblib")
 
